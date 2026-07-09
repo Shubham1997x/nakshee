@@ -153,8 +153,10 @@
     @apply bg-background text-foreground;
     text-rendering: optimizeLegibility;
   }
-  html {
+  html,
+  body {
     @apply font-sans;
+    overflow-x: hidden;
   }
   ::selection {
     background: var(--color-copper-500);
