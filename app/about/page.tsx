@@ -25,20 +25,20 @@ export default function AboutPage() {
 
       <section className="relative flex h-[85vh] min-h-[620px] items-end overflow-hidden">
         <Image
-          src="/images/lifestyle/heritage-2.jpg"
-          alt="A hand-hammered Kansa thali laid out on dark wood, lit warmly from above"
+          src="/images/products/kansa-thali-set.jpg"
+          alt="A complete hand-hammered Kansa thali set with katoris, glass and spoon"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
           quality={85}
-          className="motion-safe:animate-hero-zoom object-cover object-[center_30%]"
+          className="motion-safe:animate-hero-zoom object-cover object-[center_78%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-950/30 to-charcoal-950/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/60 via-transparent to-transparent" />
         <div className="relative mx-auto w-full max-w-7xl px-gutter pb-16 text-ivory-50 md:pb-20">
           <FadeIn>
-            <p className="eyebrow mb-3 text-copper-200">{about.eyebrow}</p>
+            <p className="eyebrow mb-3 text-copper-400">{about.eyebrow}</p>
           </FadeIn>
           <RevealText as="h1" by="lines" className="max-w-2xl font-serif text-heading">
             {about.headline}

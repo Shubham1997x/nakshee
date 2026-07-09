@@ -4,8 +4,9 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
-export function NewsletterForm() {
+export function NewsletterForm({ className }: { className?: string }) {
   const [email, setEmail] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
@@ -19,7 +20,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
+    <form onSubmit={handleSubmit} className={cn("mt-4 flex gap-2", className)}>
       <Input
         type="email"
         required
