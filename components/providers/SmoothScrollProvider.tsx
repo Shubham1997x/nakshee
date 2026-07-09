@@ -30,7 +30,20 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     lenisRef.current = instance;
     setLenis(instance);
 
+    // Images, split headlines and web fonts finishing after the initial
+    // paint all change page height, which leaves every ScrollTrigger's
+    // start/end (and the pinned horizontal-scroll section's pin range in
+    // particular) anchored to stale scroll offsets — the usual cause of
+    // scrolling appearing to "stick" partway down the page. Recalculate
+    // once everything has actually settled.
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener("load", refresh);
+    document.fonts?.ready.then(refresh);
+    const imageLoadTimer = window.setTimeout(refresh, 1200);
+
     return () => {
+      window.removeEventListener("load", refresh);
+      window.clearTimeout(imageLoadTimer);
       instance.destroy();
       gsap.ticker.remove(instance.raf);
       lenisRef.current = null;
