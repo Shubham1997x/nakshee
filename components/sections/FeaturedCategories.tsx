@@ -29,9 +29,9 @@ export function FeaturedCategories() {
                 quality={75}
                 className="object-cover transition-transform duration-700 ease-luxe group-hover:scale-[1.06]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-charcoal-950/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/90 via-charcoal-950/30 to-transparent" />
               <div className="dark absolute inset-x-0 bottom-0 p-6 text-ivory-50">
-                <p className="eyebrow mb-2">{cat.tagline}</p>
+                <p className="eyebrow text-copper-200 mb-2">{cat.tagline}</p>
                 <h3 className="font-serif text-2xl">{cat.name}</h3>
               </div>
             </Link>
